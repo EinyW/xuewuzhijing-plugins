@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "description": "随主程序构建的四个内置功能源码；需要主程序宿主，不是可动态安装的插件。",
+  "builtins": [
+    {"id":"whiteboard", "name":"讲解画板", "source":"source/whiteboard"},
+    {"id":"words", "name":"词语收录本", "source":"source/words"},
+    {"id":"points", "name":"积分系统", "source":"source/points"},
+    {"id":"challenge", "name":"挑战模式", "source":"source/challenge", "requires":["points"]}
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "name": "学无止境官方插件示例",
+  "description": "把这个文件放到 GitHub 仓库里，就可以在应用内通过 raw 地址获取插件。",
+  "plugins": [
+    {
+      "apiVersion": 1,
+      "id": "study_workbench",
+      "name": "学习工具箱",
+      "description": "添加专注时钟、复盘清单和学习笔记三个独立工作页。",
+      "version": "1.0.0",
+      "author": "学无止境",
+      "type": "workspace",
+      "pages": [
+        {
+          "id": "focus",
+          "title": "专注时钟",
+          "kind": "timer",
+          "durationMinutes": 25
+        },
+        {
+          "id": "review",
+          "title": "复盘清单",
+          "kind": "checklist",
+          "items": [
+            "整理今天的错题",
+            "复述一道题的解题思路",
+            "制定下一次练习计划"
+          ]
+        },
+        {
+          "id": "notes",
+          "title": "学习笔记",
+          "kind": "note",
+          "content": "今天学到了什么？记录下来，给下一次复习留下线索。"
+        }
+      ]
+    },
+    {
+      "id": "combo_booster",
+      "name": "连击强化包",
+      "description": "连对 10 题及以上时，本题额外 ×1.15。适合喜欢冲连击的人。",
+      "version": "1.0.0",
+      "author": "学无止境",
+      "type": "score_rule",
+      "scoreRules": [
+        {
+          "label": "十连击",
+          "condition": "combo_at_least",
+          "value": 10,
+          "multiplier": 1.15
+        }
+      ]
+    },
+    {
+      "id": "material_specialist",
+      "name": "材料题专精",
+      "description": "材料题答对时额外 ×1.1，鼓励多练材料分析。",
+      "version": "1.0.0",
+      "author": "学无止境",
+      "type": "score_rule",
+      "scoreRules": [
+        {
+          "label": "材料专精",
+          "condition": "question_type",
+          "text": "material",
+          "multiplier": 1.1
+        }
+      ]
+    },
+    {
+      "id": "speed_demon",
+      "name": "极速之手",
+      "description": "3 秒内答对时额外 ×1.05，奖励手速。",
+      "version": "1.0.0",
+      "author": "学无止境",
+      "type": "score_rule",
+      "scoreRules": [
+        {
+          "label": "极速之手",
+          "condition": "fast_answer",
+          "value": 3000,
+          "multiplier": 1.05
+        }
+      ]
+    }
+  ]
+}
