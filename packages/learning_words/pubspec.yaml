@@ -1,0 +1,13 @@
+name: learning_words
+version: 1.3.1
+publish_to: none
+environment:
+  sdk: ">=3.13.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  learning_plugin_sdk:
+    path: ../learning_plugin_sdk
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
